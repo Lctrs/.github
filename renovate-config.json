@@ -1,0 +1,65 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default configuration for repositories under `Lctrs/`.",
+  "extends": [
+    ":dependencyDashboard",
+    ":ignoreModulesAndTests",
+    ":automergeMinor",
+    ":automergePr",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":semanticPrefixChore",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlerts",
+    ":timezone(UTC)",
+    ":label(dependency)",
+    "group:allNonMajor"
+  ],
+  "commitBodyTable": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": [
+      "schedule:daily"
+    ]
+  },
+  "platformAutomerge": true,
+  "rollbackPrs": true,
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "rangeStrategy": "bump"
+    },
+    {
+      "matchDepTypes": [
+        "require-dev"
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchPaths": [
+        ".tools/**"
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchPackageNames": [
+        "php"
+      ],
+      "extends": [
+        ":automergeDisabled"
+      ],
+      "groupName": "PHP",
+      "ignoreUnstable": false,
+      "rangeStrategy": "widen"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "extends": [
+      ":labels(security)"
+    ],
+    "rangeStrategy": "bump"
+  }
+}
