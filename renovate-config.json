@@ -17,6 +17,7 @@
     "group:allNonMajor"
   ],
   "commitBodyTable": true,
+  "constraintsFiltering": "strict",
   "lockFileMaintenance": {
     "enabled": true,
     "extends": [
