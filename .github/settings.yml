@@ -25,21 +25,27 @@ branches:
 labels:
   - name: "bug"
     color: "ee0701"
+    description: ""
 
   - name: "dependency"
     color: "0366d6"
+    description: ""
 
   - name: "enhancement"
     color: "0e8a16"
+    description: ""
 
   - name: "question"
     color: "cc317c"
+    description: ""
 
   - name: "security"
     color: "ee0701"
+    description: ""
 
   - name: "stale"
     color: "eeeeee"
+    description: ""
 
 # https://docs.github.com/en/rest/reference/repos#update-a-repository
 
@@ -51,8 +57,6 @@ repository:
   default_branch: "master"
   delete_branch_on_merge: true
   description: "Provides default community health files for @Lctrs repositories."
-  enable_automated_security_fixes: false
-  enable_vulnerability_alerts: false
   has_downloads: false
   has_issues: false
   has_pages: false
